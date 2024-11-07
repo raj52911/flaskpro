@@ -1,0 +1,55 @@
+<!-- view_sales.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Sales</title>
+</head>
+<style>
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+    .image {
+        width: 150px;
+        height: auto; 
+        display: block; 
+        margin: 0 auto;
+    }
+
+</style>
+<body>
+    <h2>Sales List</h2>
+    <table border="1">
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Rate</th>
+            <th>Amount</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale.item_id }}</td>
+            <td>{{ sale.qty }}</td>
+            <td>{{ sale.rate }}</td>
+            <td>{{ sale.amount }}</td>
+            <td>{{ sale.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+</body>
+</html>

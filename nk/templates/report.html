@@ -1,0 +1,78 @@
+<!-- report.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report</title>
+</head>
+<style>
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+    .image {
+        width: 150px;
+        height: auto; 
+        display: block; 
+        margin: 0 auto;
+    }
+
+</style>
+<body>
+    <!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Namma Kadai</title>
+    <style>
+        body {
+          background-image: url('https://cdn.vectorstock.com/i/1000x1000/63/80/businessman-with-statistics-vector-41426380.webp');
+          background-repeat: no-repeat;
+          background-attachment: fixed;  
+          background-size: 1550px 750px;
+        }
+        </style>
+</head><body>
+    <h1 style="align-content: center;">Welcome to Namma Kadai</h1>
+    <p>Current Cash Balance: Rs. {{ cash_balance }}</p>
+    <nav>
+        <a href="{{ url_for('add_item') }}" class="button">Add Item</a> |
+        <a href="{{ url_for('view_items') }}" class="button">View Items</a> |
+        <a href="{{ url_for('add_purchase') }}" class="button">Add Purchase</a> |
+        <a href="{{ url_for('add_sales') }}" class="button">Add Sales</a> |
+        <a href="{{ url_for('report') }}" class="button">Report</a>
+    </nav>
+</body>
+</html>
+
+    <h2>Financial Report</h2>
+    <p>Current Cash Balance: Rs. {{ cash_balance }}</p>
+    <h3>Item Quantities</h3>
+    <table border="1">
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.item_name }}</td>
+            <td>{{ item.qty }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+</body>
+</html>

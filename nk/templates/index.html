@@ -1,0 +1,49 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Namma Kadai</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+            margin-right: 120px;
+            margin-left:50px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .image {
+            width: 100px;
+            height: auto; 
+            display: block; 
+            margin: 0 ;
+        }
+        .cen{
+            text-align: center
+        }
+
+    </style>
+</head><body >
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfqbN7_M4OMrurrznuw8JGozD5Xulk7fyy3ydOCS8HwWQ4MJpimFVnQP0MGGIFfXaiP8I&usqp=CAU" alt="Trulli" class="image">
+    <h1 class="cen">Welcome to Namma Kadai</h1>
+    <p class="cen">Current Cash Balance: Rs. {{ cash_balance }}</p>
+    <nav>
+        <a href="{{ url_for('add_item') }}" class="button">Add Item</a>
+        <a href="{{ url_for('view_items') }}" class="button">View Items</a>
+        <a href="{{ url_for('add_purchase') }}" class="button">Add Purchase</a>
+        <a href="{{ url_for('add_sales') }}" class="button">Add Sales</a>
+        <a href="{{ url_for('report') }}" class="button">Report</a>
+    </nav>
+</body>
+</html>
